@@ -7,7 +7,7 @@ output "rdp_ip" {
 }
 
 # Regional Load Balancer Address:
-output "load balancer_ip_address" {
+output "global_lb_ip_address" {
   description = "The dynamic IP address of the load balancer."
   value       = "http://${google_compute_global_forwarding_rule.entry_point.ip_address}"
 }

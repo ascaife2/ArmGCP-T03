@@ -18,5 +18,5 @@ resource "google_compute_instance_template" "brazil-instance-template" {
 
   tags = ["bam5-internal"]
 
-  metadata_startup_script = file("./brazil.sh")
+  metadata_startup_script = file("./movie.sh")
 }

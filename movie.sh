@@ -32,7 +32,7 @@ cat <<EOF > /var/www/html/index.html
     body,h1,h3 {font-family: "Raleway", sans-serif}
     body, html {height: 100%}
     .bgimg {
-      background-image: url('https://brazil-2025.s3.us-east-1.amazonaws.com/brazil-bg.jpg');
+      background-image: url('https://preview.redd.it/gakairnc41941.png?width=1080&crop=smart&auto=webp&s=d8c38c28b32f6f15dc074bdcc1b811479354236f');
       min-height: 100%;
       background-position: center;
       background-size: cover;
@@ -57,9 +57,9 @@ cat <<EOF > /var/www/html/index.html
     <div class="w3-display-middle w3-center">
       <div style="display: flex; justify-content: center; align-items: center;">
         <iframe 
-          src="https://clothingcompanysydney.com/cdn/shop/files/Hf717e6040aeb47b094a994741a1bca2e3_08c43190-904b-4a96-bc21-de223e42a773.jpg?width=536&height=652"
-          width="536"
-          height="652"
+          src="https://images.squarespace-cdn.com/content/v1/5a2061aa9f8dcef02d2e19b1/1556573004192-ND747H0J323KS6555L79/group+warriors.gif"
+          width="600"
+          height="338"
           style="border-radius:10px;"
           frameborder="0"
           title="Promotional Media"
@@ -76,7 +76,7 @@ cat <<EOF > /var/www/html/index.html
       </h3>
     </div>
     <div class="w3-display-bottomleft w3-padding-small transparent-background outlined-text">
-      <h1>Brazil - WebServer</h1>
+      <h1>Be A Man Level 5</h1>
       <h3>"I, TIQS, will make 160,000 per year thanks to Theo and Obsidian"</h3>
       <p><b>Instance Name:</b> $hostname_output</p>
       <p><b>Instance Private IP Address:</b> $local_ipv4</p>

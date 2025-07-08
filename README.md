@@ -30,16 +30,17 @@ gcp-be-a-man-level-5/
 ├── 10-autoscale-policy.tf
 ├── 11-lb.tf
 ├── 12-outputs.tf
-├── brazil.sh
+├── movie.sh
 ├── README.md
 └── Screenshots/
-    ├── brazil1.jpg
-    ├── brazil2.jpg
-    ├── brazil3.jpg
     ├── firewall-rules-with-tags.jpg
     ├── load-balancer-summary.jpg
     ├── managed-instance-group-summary.jpg
     └── rdp-server-to-load-balancer-app.jpg
+    ├── the-warriors1.jpg
+    ├── the-warriors2.jpg
+    ├── the-warriors3.jpg
+    ├── vm-instances.jpg
 ```
 
 ---
@@ -59,31 +60,19 @@ gcp-be-a-man-level-5/
 ## 📂 Terraform File Summaries
 
 - **`0-authentication.tf`**: Handles GCP service account authentication using a credentials JSON file.
-
 - **`1-provider.tf`**: Configures the Terraform provider for Google Cloud, specifying project and region.
 - **`2-variables.tf`**: Declares variables used throughout the Terraform project, including regions, zones, and names.
-
 - **`3-vpc.tf`**: Defines the custom VPC to be used across both regions.
-
 - **`4-subnets.tf`**: Creates regional subnets for public (North America) and private (South America) usage.
-
 - **`5-firewalls.tf`**: Sets up firewall rules for RDP access and internal traffic control using tags.
-
 - **`6-vm-instances.tf`**: Creates a Windows VM in the public region with RDP access enabled.
-
 - **`7-instance-template.tf`**: Defines the instance template used for launching Linux VMs in the MIG.
-
 - **`8-mig.tf`**: Provisions a Regional Managed Instance Group (MIG) spread across 3 zones in South America.
-
 - **`9-health-checks.tf`**: Configures HTTP health checks used by the load balancer to monitor VM health.
-
 - **`10-autoscale-policy.tf`**: Implements autoscaling policy for the regional MIG based on CPU utilization.
-
 - **`11-lb.tf`**: Defines the global HTTP(S) load balancer components including backend service, URL map, and proxy.
-
 - **`12-outputs.tf`**: Outputs the RDP IP and internal load balancer IP after deployment.
-
-- **`brazil.sh`**: Custom startup script for Linux VMs with motivational HTML output and visual customizations.
+- **`movie.sh`**: Custom startup script for Linux VMs with motivational HTML output and visual customizations.
 
 ---
 
@@ -105,11 +94,12 @@ terraform apply -auto-approve
 |------------|------|
 | **Load Balancer Summary** | ![load-balancer-summary](/Screenshots/load-balancer-summary.jpg) |
 | **MIG Summary** | ![managed-instance-group-summary](/Screenshots/managed-instance-group-summary.jpg) |
+| **VM Instances** | ![vm-instances](/Screenshots/vm-instances.jpg) |
 | **Firewall Rules** | ![firewall-rules-with-tags](/Screenshots/firewall-rules-with-tags.jpg) |
 | **RDP-to-Web Connection** | ![rdp-server-to-load-balancer-app](/Screenshots/rdp-server-to-load-balancer-app.jpg) |
-| **VM Instance (Zone A)** | ![brazil1](Screenshots/brazil1.jpg) |
-| **VM Instance (Zone B)** | ![brazil2](Screenshots/brazil2.jpg) |
-| **VM Instance (Zone C)** | ![brazil3](Screenshots/brazil3.jpg) |
+| **The Warriors Did It (Zone A)** | ![the-warriors1](Screenshots/the-warriors1.jpg) |
+| **Can You Dig It (Zone B)** | ![the-warriors2](Screenshots/the-warriors2.jpg) |
+| **RIFFS YEAH RIGHT (Zone C)** | ![the-warriors3](Screenshots/the-warriors3.jpg) |
 
 ---
 
@@ -137,7 +127,7 @@ This will:
 |-------|------------|
 | Load balancer shows "unhealthy" | Ensure Apache is running and firewall allows health checker IPs (`130.211.0.0/22`, `35.191.0.0/16`) |
 | RDP not accessible | Verify firewall rule with tag `rdp-public` allows **TCP:3389** |
-| No webpage on Linux VM | Check `brazil.sh` script executed, and Apache is running on port 80 |
+| No webpage on Linux VM | Check `movie.sh` script executed, and Apache is running on port 80 |
 | Autoscaler not working | Use `google_compute_region_autoscaler` for regional MIGs and ensure `target` matches MIG |
 | Global LB not attaching to MIG | Make sure you're using a zonal or regional MIG and referencing the correct group type in backend config |
 
