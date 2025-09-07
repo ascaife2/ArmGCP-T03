@@ -7,7 +7,7 @@ resource "google_compute_global_forwarding_rule" "entry_point" {
   target                = google_compute_target_http_proxy.tsa-http-proxy.id
 
   depends_on = [
-    google_compute_subnetwork.armT03-vpc-private,
+    google_compute_subnetwork.armt03-vpc-private,
   ]
 }
 

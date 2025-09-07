@@ -14,7 +14,7 @@ resource "google_compute_instance" "iowa-windows-vm" {
   }
 
   network_interface {
-    subnetwork = google_compute_subnetwork.armT03-vpc-public.name
+    subnetwork = google_compute_subnetwork.armt03-vpc-public.name
     access_config {}
   }
 }

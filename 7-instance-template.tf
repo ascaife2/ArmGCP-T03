@@ -12,7 +12,7 @@ resource "google_compute_instance_template" "africa-instance-template" {
   }
 
   network_interface {
-    subnetwork = google_compute_subnetwork.armT03-vpc-private.id
+    subnetwork = google_compute_subnetwork.armt03-vpc-private.id
     access_config {}
   }
 

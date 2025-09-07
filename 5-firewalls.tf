@@ -3,7 +3,7 @@
 # Allow RDP
 resource "google_compute_firewall" "rdp-allow" {
   name    = "allow-rdp"
-  network = google_compute_network.armT03-vpc.name
+  network = google_compute_network.armt03-vpc.name
 
   allow {
     protocol = "tcp"
@@ -17,7 +17,7 @@ resource "google_compute_firewall" "rdp-allow" {
 # Allow Internal Traffic
 resource "google_compute_firewall" "allow-internal" {
   name    = "allow-internal"
-  network = google_compute_network.armT03-vpc.name
+  network = google_compute_network.armt03-vpc.name
 
   allow {
     protocol = "tcp"
@@ -31,7 +31,7 @@ resource "google_compute_firewall" "allow-internal" {
 # Allow Health Check
 resource "google_compute_firewall" "allow_health_check" {
   name    = "allow-health-check"
-  network = google_compute_network.armT03-vpc.name
+  network = google_compute_network.armt03-vpc.name
 
   allow {
     protocol = "tcp"

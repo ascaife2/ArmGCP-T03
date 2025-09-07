@@ -3,7 +3,7 @@
 # Windows RDP Address:
 output "rdp_ip" {
   description = "The dynamic IP address of the VM instance."
-  value = "http://${google_compute_instance.iowa-windows-vm.network_interface[0].access_config[0].nat_ip}"
+  value       = "http://${google_compute_instance.iowa-windows-vm.network_interface[0].access_config[0].nat_ip}"
 }
 
 # Regional Load Balancer Address:
