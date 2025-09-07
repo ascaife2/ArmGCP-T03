@@ -23,7 +23,7 @@ cat <<EOF > /var/www/html/index.html
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Be A Man Level 5</title>
+  <title>Armaggeddon No. 5,812,904</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -76,8 +76,8 @@ cat <<EOF > /var/www/html/index.html
       </h3>
     </div>
     <div class="w3-display-bottomleft w3-padding-small transparent-background outlined-text">
-      <h1>Be A Man Level 5</h1>
-      <h3>"I, TIQS, will make 160,000 per year thanks to Theo and Obsidian"</h3>
+      <h1>Armaggeddon No. 5,812,904</h1>
+      <h3>"I, Adam, will make 160,000 per year thanks to Theo and El Guapo"</h3>
       <p><b>Instance Name:</b> $hostname_output</p>
       <p><b>Instance Private IP Address:</b> $local_ipv4</p>
       <p><b>Zone:</b> $zone</p>

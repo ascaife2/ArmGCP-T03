@@ -1,13 +1,13 @@
 variable "region" {
-  default = "us-central1"               # Your Region
+  default = "africa-south1"               # Your Region
 }
 
 variable "zone" {
-  default = "us-central1-a"             # Your Zone
+  default = "africa-south1-a"             # Your Zone
 }
 
 variable "project" {
-  default = "your-project-id"           # Your Project ID
+  default = "project007part2"           # Your Project ID
 }
 
 variable "instance_image" {

@@ -1,25 +1,25 @@
 # https://registry.terraform.io/providers/hashicorp/google/latest/docs/data-sources/compute_zones
 
-data "google_compute_zones" "brazil-available" {
+data "google_compute_zones" "africa-available" {
   status = "UP"
-  region = "southamerica-east1"
+  region = "africa-south1"
 }
 
 # https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/compute_region_instance_group_manager
-resource "google_compute_region_instance_group_manager" "brazil" {
-  name               = "brazil-mig"
-  region             = "southamerica-east1"
-  base_instance_name = "brazil"
+resource "google_compute_region_instance_group_manager" "africa-mig" {
+  name               = "africa-mig"
+  region             = "africa-south1"
+  base_instance_name = "africa"
   target_size        = 3
 
   version {
-    instance_template = google_compute_instance_template.brazil-instance-template.id
+    instance_template = google_compute_instance_template.africa-instance-template.id
   }
 
   distribution_policy_zones = [
-    "southamerica-east1-a",
-    "southamerica-east1-b",
-    "southamerica-east1-c"
+    "africa-south1-a",
+    "africa-south1-b",
+    "africa-south1-c"
   ]
 
   named_port {

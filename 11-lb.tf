@@ -7,7 +7,7 @@ resource "google_compute_global_forwarding_rule" "entry_point" {
   target                = google_compute_target_http_proxy.tsa-http-proxy.id
 
   depends_on = [
-    google_compute_subnetwork.bam5-private,
+    google_compute_subnetwork.armT03-vpc-private,
   ]
 }
 
@@ -30,10 +30,10 @@ resource "google_compute_backend_service" "backend_service" {
   port_name                       = "http"
   protocol                        = "HTTP"
   timeout_sec                     = 10
-  connection_draining_timeout_sec = 0
+  connection_draining_timeout_sec = 10
 
   backend {
-    group           = google_compute_region_instance_group_manager.brazil.instance_group
+    group           = google_compute_region_instance_group_manager.africa-mig.instance_group
     balancing_mode  = "UTILIZATION"
     capacity_scaler = 1.0
     max_utilization = 0.8
